@@ -1,0 +1,17 @@
+[package]
+name = "hyo-app"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Hyo Sheet: an Excel-compatible spreadsheet built with iced and wgpu."
+
+[features]
+default = []
+cuda-oxide = ["hyo-gpu/cuda-oxide"]
+
+[dependencies]
+hyo-core = { workspace = true }
+hyo-gpu = { workspace = true }
+hyo-io = { workspace = true }
+iced = { version = "0.14", default-features = false, features = ["wgpu", "canvas", "crisp", "thread-pool"] }
+rfd = "0.17"

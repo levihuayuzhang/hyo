@@ -1,0 +1,14 @@
+[package]
+name = "hyo-io"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "XLSX import/export for Hyo Sheet."
+
+[lib]
+doctest = false
+
+[dependencies]
+hyo-core = { workspace = true }
+calamine = "0.37"
+rust_xlsxwriter = "0.100"

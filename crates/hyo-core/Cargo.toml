@@ -1,0 +1,10 @@
+[package]
+name = "hyo-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Spreadsheet engine for Hyo Office: cells, Excel-compatible formulas, dependency graph, recalculation."
+
+[dependencies]
+
+[dev-dependencies]

@@ -1,0 +1,21 @@
+[workspace]
+resolver = "3"
+members = ["crates/hyo-core", "crates/hyo-gpu", "crates/hyo-io", "crates/hyo-app"]
+exclude = ["gpu/hyo-cuda-oxide"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+repository = "https://github.com/hyo-office/hyo"
+rust-version = "1.88"
+
+[workspace.dependencies]
+hyo-core = { path = "crates/hyo-core" }
+hyo-gpu = { path = "crates/hyo-gpu" }
+hyo-io = { path = "crates/hyo-io" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"

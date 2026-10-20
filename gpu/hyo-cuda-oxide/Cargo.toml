@@ -1,0 +1,21 @@
+[package]
+name = "hyo-cuda-oxide"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+description = "cuda-oxide SIMT kernels for Hyo Sheet range statistics."
+
+[workspace]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+hyo-core = { path = "../../crates/hyo-core" }
+cuda-core = { git = "https://github.com/NVIDIA/cuda-rust.git", rev = "269082899d3b62d5834521bce004509025edb797" }
+cuda-device = { git = "https://github.com/NVIDIA/cuda-rust.git", rev = "269082899d3b62d5834521bce004509025edb797" }
+cuda-host = { git = "https://github.com/NVIDIA/cuda-rust.git", rev = "269082899d3b62d5834521bce004509025edb797" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

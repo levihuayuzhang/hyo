@@ -1,0 +1,47 @@
+case	sheet	address	formula	text	type	value
+Arithmetic precedence	Cases	C2	=1+2*3	7	Double	7
+Unary minus vs power	Cases	C3	=-2^2	4	Double	4
+Power right associative	Cases	C4	=2^3^2	64	Double	64
+Division	Cases	C5	=10/4	2.5	Double	2.5
+One third	Cases	C6	=1/3	0.333333333	Double	0.33333333333333331
+Point one plus point two	Cases	C7	=0.1+0.2	0.3	Double	0.30000000000000004
+Overflow	Cases	C8	=2^1024	#NUM!	Int32	-2146826252
+Division by zero	Cases	C9	=1/0	#DIV/0!	Int32	-2146826281
+Square root domain	Cases	C10	=SQRT(-1)	#NUM!	Int32	-2146826252
+Round trap	Cases	C11	=ROUND(2.675,2)	2.68	Double	2.68
+Round negative trap	Cases	C12	=ROUND(-2.675,2)	-2.68	Double	-2.68
+Round hundreds	Cases	C13	=ROUND(1234,-2)	1200	Double	1200
+Round half away	Cases	C14	=ROUND(2.5,0)	3	Double	3
+Mod negative	Cases	C15	=MOD(-3,2)	1	Double	1
+Sum range	Cases	C16	=SUM(Inputs!A1:A5)	30	Double	30
+Average range	Cases	C17	=AVERAGE(Inputs!A1:A5)	15	Double	15
+Count range	Cases	C18	=COUNT(Inputs!A1:A5)	2	Double	2
+Counta range	Cases	C19	=COUNTA(Inputs!A1:A5)	4	Double	4
+Countblank range	Cases	C20	=COUNTBLANK(Inputs!A1:A5)	1	Double	1
+Min range	Cases	C21	=MIN(Inputs!A1:A5)	10	Double	10
+Max range	Cases	C22	=MAX(Inputs!A1:A5)	20	Double	20
+Product range	Cases	C23	=PRODUCT(Inputs!A1:A5)	200	Double	200
+Sumproduct	Cases	C24	=SUMPRODUCT(Inputs!B1:B3,Inputs!C1:C3)	32	Double	32
+If lazy	Cases	C25	=IF(TRUE,1,1/0)	1	Double	1
+Iferror	Cases	C26	=IFERROR(1/0,42)	42	Double	42
+Ifna	Cases	C27	=IFNA(NA(),42)	42	Double	42
+And	Cases	C28	=AND(TRUE,1,2)	TRUE	Boolean	True
+Or	Cases	C29	=OR(FALSE,0,1)	TRUE	Boolean	True
+Concat	Cases	C30	=CONCAT("a",1,TRUE)	a1TRUE	String	a1TRUE
+Left	Cases	C31	=LEFT("hello",2)	he	String	he
+Right	Cases	C32	=RIGHT("hello",2)	lo	String	lo
+Mid	Cases	C33	=MID("hello",2,3)	ell	String	ell
+Len text	Cases	C34	=LEN("hello")	5	Double	5
+Upper	Cases	C35	=UPPER("abc")	ABC	String	ABC
+Trim	Cases	C36	=TRIM("  a   b  ")	a b	String	a b
+Text compare	Cases	C37	="a"="A"	TRUE	Boolean	True
+Number vs text	Cases	C38	=1="1"	FALSE	Boolean	False
+Less than	Cases	C39	=1<2	TRUE	Boolean	True
+Exact	Cases	C40	=EXACT("a","A")	FALSE	Boolean	False
+Log10	Cases	C41	=LOG10(1000)	3	Double	3
+Log default base	Cases	C42	=LOG(100)	2	Double	2
+Power	Cases	C43	=POWER(2,10)	1024	Double	1024
+Abs	Cases	C44	=ABS(-5)	5	Double	5
+Sign	Cases	C45	=SIGN(-5)	-1	Double	-1
+Int	Cases	C46	=INT(-2.5)	-3	Double	-3
+Empty compare	Cases	C47	=Inputs!A5=""	TRUE	Boolean	True

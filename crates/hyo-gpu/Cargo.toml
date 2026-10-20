@@ -1,0 +1,17 @@
+[package]
+name = "hyo-gpu"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Numeric dispatch for Hyo Sheet: cuda-oxide plugin with CPU fallback."
+
+[features]
+default = []
+# Enables the dynamic loader for the cuda-oxide plugin. This feature does not
+# require a CUDA toolkit to compile; the plugin itself is built separately with
+# NVIDIA's cargo oxide on Linux.
+cuda-oxide = ["dep:libloading"]
+
+[dependencies]
+hyo-core = { workspace = true }
+libloading = { version = "0.8", optional = true }
